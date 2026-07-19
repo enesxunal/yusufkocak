@@ -3,12 +3,19 @@ import { PARTNERS } from "@/lib/constants";
 
 type PartnerLogosProps = {
   compact?: boolean;
+  align?: "left" | "center";
 };
 
-export default function PartnerLogos({ compact = false }: PartnerLogosProps) {
+export default function PartnerLogos({
+  compact = false,
+  align = "center",
+}: PartnerLogosProps) {
+  const alignClass =
+    align === "left" ? "justify-start" : "justify-center";
+
   if (compact) {
     return (
-      <div className="flex flex-wrap items-center justify-center gap-3">
+      <div className={`flex flex-wrap items-center gap-3 ${alignClass}`}>
         {PARTNERS.map((partner) => (
           <a
             key={partner.href}
@@ -16,7 +23,7 @@ export default function PartnerLogos({ compact = false }: PartnerLogosProps) {
             target="_blank"
             rel="noopener noreferrer"
             title={partner.name}
-            className="flex h-11 w-11 items-center justify-center rounded-lg bg-white/95 p-1.5 transition hover:bg-white hover:scale-105"
+            className="flex h-11 w-11 items-center justify-center rounded-lg bg-white/95 p-1.5 transition hover:scale-105 hover:bg-white"
           >
             <Image
               src={partner.logo}
@@ -32,7 +39,9 @@ export default function PartnerLogos({ compact = false }: PartnerLogosProps) {
   }
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-6 lg:justify-between">
+    <div
+      className={`flex flex-wrap items-center gap-5 sm:gap-6 ${alignClass} lg:justify-between`}
+    >
       {PARTNERS.map((partner) => (
         <a
           key={partner.href}

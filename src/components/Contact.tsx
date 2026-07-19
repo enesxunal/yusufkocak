@@ -1,4 +1,7 @@
+import Link from "next/link";
 import { SITE } from "@/lib/constants";
+import PartnerLogos from "./PartnerLogos";
+import LegalLinks from "./LegalLinks";
 
 export default function Contact() {
   return (
@@ -51,32 +54,45 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="lg:pt-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-              Hızlı iletişim
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-col xl:flex-row">
-              <a
-                href={`https://wa.me/${SITE.phoneRaw}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#1fb855]"
-              >
-                WhatsApp
-              </a>
-              <a
-                href={`tel:${SITE.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/20"
-              >
-                Telefon et
-              </a>
-              <a
-                href="#appointment"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-navy transition hover:bg-white/90"
-              >
-                Ön görüşme planla
-              </a>
+          <div className="space-y-8">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+                Hızlı iletişim
+              </p>
+              <div className="mt-4 flex flex-col gap-3">
+                <a
+                  href={`https://wa.me/${SITE.phoneRaw}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#1fb855]"
+                >
+                  WhatsApp
+                </a>
+                <a
+                  href={`tel:${SITE.phoneRaw}`}
+                  className="inline-flex items-center justify-center rounded-xl border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/20"
+                >
+                  Telefon et
+                </a>
+                <a
+                  href="#appointment"
+                  className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-navy transition hover:bg-white/90"
+                >
+                  Ön görüşme planla
+                </a>
+              </div>
             </div>
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+                Önemli bağlantılar
+              </p>
+              <div className="mt-4">
+                <PartnerLogos compact align="left" />
+              </div>
+            </div>
+
+            <LegalLinks />
           </div>
         </div>
       </div>

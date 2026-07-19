@@ -106,9 +106,6 @@ export function getStructuredData() {
         },
         priceRange: "$$",
         availableLanguage: ["Turkish"],
-        sameAs: [
-          "https://www.linkedin.com/in/yusuf-ko%C3%A7ak-6a9512189/",
-        ],
       },
       {
         "@type": "Person",

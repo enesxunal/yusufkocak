@@ -58,15 +58,6 @@ export default function Contact() {
             </h3>
             <PartnerLogos />
 
-            <a
-              href="https://www.linkedin.com/in/yusuf-ko%C3%A7ak-6a9512189/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-block text-sm text-white/70 underline-offset-4 transition hover:text-white hover:underline"
-            >
-              LinkedIn profili
-            </a>
-
             <div className="mt-10 flex flex-wrap gap-3">
               <a
                 href={`https://wa.me/${SITE.phoneRaw}`}

@@ -37,18 +37,6 @@ export const THERAPY_INTRO = [
 export const THERAPY_AREAS =
   "Depresyon, stres yönetimi, öfke kontrolü, panik bozukluk, fobiler, obsesif kompulsif bozukluk (takıntılar), yaygın kaygı bozukluğu, travma sonrası stres bozukluğu, kişilik bozuklukları ve diğer psikopatolojiler gibi ruh sağlığınızı, işlevselliğinizi ve kişilerarası ilişkilerinizi etkileyen konular üzerine çalışıyorum.";
 
-export const LINKS = [
-  { label: "Türk Psikologlar Derneği", href: "https://psikolog.org.tr/" },
-  { label: "Türk Psikiyatri Derneği", href: "https://psikiyatri.org.tr/" },
-  { label: "International Psychoanalytical Association", href: "https://www.ipa.world/" },
-  { label: "İstanbul Psikanaliz Derneği", href: "https://istanbulpsikanalizdernegi.com/" },
-  { label: "Psike İstanbul", href: "https://psikeistanbul.org/" },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/yusuf-ko%C3%A7ak-6a9512189/",
-  },
-];
-
 export const PARTNERS = [
   {
     name: "Türk Psikologlar Derneği",

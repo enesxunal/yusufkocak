@@ -149,7 +149,7 @@ export const COOKIE_SECTIONS = [
   {
     title: "5. Üçüncü Taraf Bağlantılar",
     paragraphs: [
-      "WhatsApp, LinkedIn ve meslek kuruluşu web sitelerine yönlendiren bağlantılar kendi çerez politikalarına tabidir. Bu platformlara geçtiğinizde ilgili sitelerin gizlilik ve çerez metinlerini incelemenizi öneririz.",
+      "WhatsApp ve meslek kuruluşu web sitelerine yönlendiren bağlantılar kendi çerez politikalarına tabidir. Bu platformlara geçtiğinizde ilgili sitelerin gizlilik ve çerez metinlerini incelemenizi öneririz.",
     ],
   },
   {

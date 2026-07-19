@@ -1,4 +1,5 @@
 import { THERAPY_AREAS, THERAPY_INTRO } from "@/lib/constants";
+import OfficeGallery from "./OfficeGallery";
 
 const areas = [
   "Depresyon",
@@ -44,6 +45,8 @@ export default function Therapy() {
             </p>
           ))}
         </div>
+
+        <OfficeGallery />
 
         <div className="mt-16 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm lg:p-10">
           <h3 className="font-display text-xl font-medium text-navy">

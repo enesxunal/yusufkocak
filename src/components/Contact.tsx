@@ -1,4 +1,5 @@
-import { LINKS, SITE } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
+import PartnerLogos from "./PartnerLogos";
 
 export default function Contact() {
   return (
@@ -55,20 +56,16 @@ export default function Contact() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50">
               Önemli bağlantılar
             </h3>
-            <ul className="mt-6 space-y-3">
-              {LINKS.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-white/80 underline-offset-4 transition hover:text-white hover:underline sm:text-base"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <PartnerLogos />
+
+            <a
+              href="https://www.linkedin.com/in/yusuf-ko%C3%A7ak-6a9512189/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block text-sm text-white/70 underline-offset-4 transition hover:text-white hover:underline"
+            >
+              LinkedIn profili
+            </a>
 
             <div className="mt-10 flex flex-wrap gap-3">
               <a

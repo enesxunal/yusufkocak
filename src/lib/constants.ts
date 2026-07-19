@@ -41,37 +41,27 @@ export const PARTNERS = [
   {
     name: "Türk Psikologlar Derneği",
     href: "https://psikolog.org.tr/",
-    logo: "/images/partners/tpd.svg",
-    width: 120,
-    height: 120,
+    logo: "/images/partners/tpd.png",
   },
   {
     name: "Türk Psikiyatri Derneği",
     href: "https://psikiyatri.org.tr/",
     logo: "/images/partners/tps.png",
-    width: 180,
-    height: 40,
   },
   {
     name: "International Psychoanalytical Association",
     href: "https://www.ipa.world/",
     logo: "/images/partners/ipa.png",
-    width: 140,
-    height: 42,
   },
   {
     name: "İstanbul Psikanaliz Derneği",
     href: "https://istanbulpsikanalizdernegi.com/",
     logo: "/images/partners/ipd.png",
-    width: 120,
-    height: 50,
   },
   {
     name: "Psike İstanbul",
     href: "https://psikeistanbul.org/",
-    logo: "/images/partners/psike.jpg",
-    width: 120,
-    height: 100,
+    logo: "/images/partners/psike.png",
   },
 ] as const;
 

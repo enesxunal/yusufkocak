@@ -18,7 +18,7 @@ export default function Contact() {
       />
 
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
               İletişim
@@ -52,34 +52,41 @@ export default function Contact() {
             </div>
           </div>
 
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50">
-              Önemli bağlantılar
-            </h3>
-            <PartnerLogos />
-
-            <div className="mt-10 flex flex-wrap gap-3">
+          <div className="lg:pt-12">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+              Hızlı iletişim
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-col xl:flex-row">
               <a
                 href={`https://wa.me/${SITE.phoneRaw}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1fb855]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#1fb855]"
               >
                 WhatsApp
               </a>
               <a
                 href={`tel:${SITE.phoneRaw}`}
-                className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/20"
               >
                 Telefon et
               </a>
               <a
                 href="#appointment"
-                className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-navy transition hover:bg-white/90"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-navy transition hover:bg-white/90"
               >
                 Ön görüşme planla
               </a>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-16 border-t border-white/10 pt-12 lg:mt-20">
+          <h3 className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-white/50">
+            Önemli bağlantılar
+          </h3>
+          <div className="mt-8">
+            <PartnerLogos />
           </div>
         </div>
       </div>

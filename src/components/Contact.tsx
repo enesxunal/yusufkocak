@@ -3,11 +3,14 @@ import { SITE } from "@/lib/constants";
 import PartnerLogos from "./PartnerLogos";
 import LegalLinks from "./LegalLinks";
 
+const sectionLabel =
+  "text-xs font-semibold uppercase tracking-[0.2em] text-white/50";
+
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-navy py-20 text-white lg:py-28"
+      className="relative overflow-hidden bg-navy py-20 text-white lg:py-24"
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-10"
@@ -20,15 +23,13 @@ export default function Contact() {
       />
 
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-              İletişim
-            </p>
+            <p className={sectionLabel}>İletişim</p>
             <h2 className="mt-3 font-display text-3xl font-light sm:text-4xl">
               Birlikte konuşalım
             </h2>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-white/75 sm:text-base">
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-white/70">
               Psikoterapi süreci hakkında sorularınız varsa veya ön görüşme
               planlamak isterseniz aşağıdaki kanallardan ulaşabilirsiniz.
             </p>
@@ -54,49 +55,74 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="space-y-8">
+          <div className="flex flex-col gap-8 border-white/10 lg:border-l lg:pl-12">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                Hızlı iletişim
-              </p>
+              <p className={sectionLabel}>Hızlı iletişim</p>
               <div className="mt-4 flex flex-col gap-3">
-                <a
+                <ContactButton
                   href={`https://wa.me/${SITE.phoneRaw}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#1fb855]"
+                  external
+                  variant="whatsapp"
                 >
                   WhatsApp
-                </a>
-                <a
-                  href={`tel:${SITE.phoneRaw}`}
-                  className="inline-flex items-center justify-center rounded-xl border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/20"
-                >
+                </ContactButton>
+                <ContactButton href={`tel:${SITE.phoneRaw}`} variant="outline">
                   Telefon et
-                </a>
-                <a
-                  href="#appointment"
-                  className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-navy transition hover:bg-white/90"
-                >
+                </ContactButton>
+                <ContactButton href="#appointment" variant="solid">
                   Ön görüşme planla
-                </a>
+                </ContactButton>
               </div>
             </div>
 
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                Önemli bağlantılar
-              </p>
+            <div className="border-t border-white/10 pt-8">
+              <p className={sectionLabel}>Önemli bağlantılar</p>
               <div className="mt-4">
                 <PartnerLogos compact align="left" />
               </div>
             </div>
 
-            <LegalLinks />
+            <div className="border-t border-white/10 pt-8">
+              <LegalLinks />
+            </div>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function ContactButton({
+  href,
+  children,
+  variant,
+  external,
+}: {
+  href: string;
+  children: React.ReactNode;
+  variant: "whatsapp" | "outline" | "solid";
+  external?: boolean;
+}) {
+  const classes = {
+    whatsapp:
+      "bg-[#25D366] text-white hover:bg-[#1fb855]",
+    outline:
+      "border border-white/25 bg-white/10 text-white hover:bg-white/20",
+    solid: "bg-white text-navy hover:bg-white/90",
+  }[variant];
+
+  const props = external
+    ? { target: "_blank" as const, rel: "noopener noreferrer" as const }
+    : {};
+
+  return (
+    <a
+      href={href}
+      {...props}
+      className={`inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium transition ${classes}`}
+    >
+      {children}
+    </a>
   );
 }
 
@@ -113,21 +139,23 @@ function ContactItem({
 }) {
   const content = (
     <>
-      <p className="text-xs uppercase tracking-wider text-white/45">{label}</p>
-      <p className="mt-1 whitespace-pre-line text-base sm:text-lg">{value}</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50">
+        {label}
+      </p>
+      <p className="mt-1 whitespace-pre-line text-sm text-white/90">{value}</p>
     </>
   );
 
   return (
     <div className="flex gap-4">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-lg">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 text-base">
         {icon === "phone" && "📞"}
         {icon === "mail" && "✉️"}
         {icon === "location" && "📍"}
       </div>
       <div>
         {href ? (
-          <a href={href} className="transition hover:text-white/90">
+          <a href={href} className="transition hover:text-white">
             {content}
           </a>
         ) : (

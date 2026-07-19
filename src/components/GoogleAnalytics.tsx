@@ -1,12 +1,25 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import {
+  CONSENT_CHANGE_EVENT,
+  hasAnalyticsConsent,
+} from "@/lib/cookies";
 import { GA_MEASUREMENT_ID, trackClick } from "@/lib/analytics";
 
 export default function GoogleAnalytics() {
+  const [enabled, setEnabled] = useState(false);
+
   useEffect(() => {
-    if (!GA_MEASUREMENT_ID) return;
+    const sync = () => setEnabled(hasAnalyticsConsent());
+    sync();
+    window.addEventListener(CONSENT_CHANGE_EVENT, sync);
+    return () => window.removeEventListener(CONSENT_CHANGE_EVENT, sync);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled || !GA_MEASUREMENT_ID) return;
 
     const handleClick = (event: MouseEvent) => {
       const target = event.target;
@@ -20,9 +33,9 @@ export default function GoogleAnalytics() {
 
     document.addEventListener("click", handleClick, true);
     return () => document.removeEventListener("click", handleClick, true);
-  }, []);
+  }, [enabled]);
 
-  if (!GA_MEASUREMENT_ID) return null;
+  if (!enabled || !GA_MEASUREMENT_ID) return null;
 
   return (
     <>

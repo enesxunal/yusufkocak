@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Roboto } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import StructuredData from "@/components/StructuredData";
+import CookieConsent from "@/components/CookieConsent";
 import { getSiteMetadata } from "@/lib/seo";
 import "./globals.css";
 
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={`${dmSans.variable} ${roboto.variable} antialiased`}>
         <StructuredData />
         <GoogleAnalytics />
+        <CookieConsent />
         {children}
       </body>
     </html>

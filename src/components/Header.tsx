@@ -3,23 +3,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { LEGAL_PAGES } from "@/lib/legal-content";
 
 const navItems = [
-  { href: "#about", label: "Hakkımda" },
-  { href: "#therapy", label: "Psikoterapi" },
-  { href: "#appointment", label: "Ön Görüşme" },
-  { href: "#contact", label: "İletişim" },
+  { href: "/#about", label: "Hakkımda" },
+  { href: "/#therapy", label: "Psikoterapi" },
+  { href: "/#appointment", label: "Ön Görüşme" },
+  { href: "/#contact", label: "İletişim" },
 ];
 
-export default function Header() {
+type HeaderProps = {
+  solid?: boolean;
+};
+
+export default function Header({ solid = false }: HeaderProps) {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(solid);
 
   useEffect(() => {
+    if (solid) return;
+
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [solid]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -28,16 +35,18 @@ export default function Header() {
     };
   }, [open]);
 
+  const isSolid = solid || scrolled;
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
+        isSolid
           ? "border-b border-white/10 bg-navy/95 shadow-lg backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8">
-        <Link href="#" className="relative block h-10 w-36 sm:h-12 sm:w-44">
+        <Link href="/" className="relative block h-10 w-36 sm:h-12 sm:w-44">
           <Image
             src="/images/logo-white.png"
             alt="Psikolog Yusuf Koçak"
@@ -49,13 +58,13 @@ export default function Header() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="text-sm font-medium text-white/85 transition hover:text-white"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -74,13 +83,13 @@ export default function Header() {
           <ul className="flex flex-col gap-4">
             {navItems.map((item) => (
               <li key={item.href}>
-                <a
+                <Link
                   href={item.href}
                   className="block text-lg text-white/90"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

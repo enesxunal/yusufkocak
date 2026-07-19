@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { DM_Sans, Roboto } from "next/font/google";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import StructuredData from "@/components/StructuredData";
+import { getSiteMetadata } from "@/lib/seo";
 import "./globals.css";
-import { SITE } from "@/lib/constants";
 
 const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
@@ -15,23 +17,7 @@ const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
 });
 
-export const metadata: Metadata = {
-  title: SITE.title,
-  description: SITE.description,
-  metadataBase: new URL(SITE.url),
-  openGraph: {
-    title: SITE.title,
-    description: SITE.description,
-    url: SITE.url,
-    siteName: SITE.name,
-    locale: "tr_TR",
-    type: "website",
-  },
-  icons: {
-    icon: "/images/favicon.png",
-    apple: "/images/favicon.png",
-  },
-};
+export const metadata: Metadata = getSiteMetadata();
 
 export default function RootLayout({
   children,
@@ -41,6 +27,8 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className={`${dmSans.variable} ${roboto.variable} antialiased`}>
+        <StructuredData />
+        <GoogleAnalytics />
         {children}
       </body>
     </html>

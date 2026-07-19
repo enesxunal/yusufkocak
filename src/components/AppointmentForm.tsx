@@ -7,6 +7,7 @@ import {
   getHoursForDate,
   formatHour,
 } from "@/lib/appointment";
+import { trackEvent } from "@/lib/analytics";
 
 export default function AppointmentForm() {
   const dates = useMemo(() => getAvailableDates(), []);
@@ -38,6 +39,14 @@ export default function AppointmentForm() {
 
     const url = buildWhatsAppUrl(name, selectedDate.label, hour);
     setRedirecting(true);
+
+    trackEvent("appointment_request", {
+      appointment_date: selectedDate.label,
+      appointment_hour: formatHour(hour),
+    });
+    trackEvent("generate_lead", {
+      method: "whatsapp_appointment",
+    });
 
     window.setTimeout(() => {
       window.open(url, "_blank", "noopener,noreferrer");

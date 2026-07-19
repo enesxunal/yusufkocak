@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #151933;
+  --color-navy-light: #494d66;
+  --color-cream: #f8f7f5;
+  --color-muted: #6b7280;
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-roboto);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #1f2937;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: #151933;
+  color: #ffffff;
+}
+
+section {
+  scroll-margin-top: 5rem;
+}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "./Header";
 import Footer from "./Footer";
+import NavyFooter from "./NavyFooter";
 
 type LegalSection = {
   title: string;
@@ -57,6 +58,7 @@ export default function LegalLayout({ title, intro, sections }: LegalLayoutProps
           </div>
         </div>
       </main>
+      <NavyFooter />
       <Footer />
     </>
   );

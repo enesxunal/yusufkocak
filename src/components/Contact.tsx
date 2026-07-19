@@ -1,5 +1,4 @@
 import { SITE } from "@/lib/constants";
-import PartnerLogos from "./PartnerLogos";
 
 export default function Contact() {
   return (
@@ -78,15 +77,6 @@ export default function Contact() {
                 Ön görüşme planla
               </a>
             </div>
-          </div>
-        </div>
-
-        <div className="mt-16 border-t border-white/10 pt-12 lg:mt-20">
-          <h3 className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-white/50">
-            Önemli bağlantılar
-          </h3>
-          <div className="mt-8">
-            <PartnerLogos />
           </div>
         </div>
       </div>

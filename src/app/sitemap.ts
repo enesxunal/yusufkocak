@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/constants";
 import { LEGAL_PAGES } from "@/lib/legal-content";
+import { TOPICS } from "@/lib/topics";
 
 export const dynamic = "force-static";
 
@@ -26,5 +27,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    ...TOPICS.map((topic) => ({
+      url: `${SITE.url}/konular/${topic.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
   ];
 }

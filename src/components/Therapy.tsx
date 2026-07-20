@@ -1,16 +1,7 @@
+import Link from "next/link";
 import { THERAPY_AREAS, THERAPY_INTRO } from "@/lib/constants";
+import { TOPICS } from "@/lib/topics";
 import OfficeGallery from "./OfficeGallery";
-
-const areas = [
-  "Depresyon",
-  "Kaygı bozuklukları",
-  "Panik bozukluk",
-  "Travma",
-  "Obsesif kompulsif bozukluk",
-  "Kişilik bozuklukları",
-  "Stres yönetimi",
-  "Öfke kontrolü",
-];
 
 export default function Therapy() {
   return (
@@ -57,13 +48,14 @@ export default function Therapy() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-2">
-            {areas.map((area) => (
-              <span
-                key={area}
-                className="rounded-full bg-cream px-4 py-2 text-xs font-medium text-navy sm:text-sm"
+            {TOPICS.map((topic) => (
+              <Link
+                key={topic.slug}
+                href={`/konular/${topic.slug}`}
+                className="rounded-full bg-cream px-4 py-2 text-xs font-medium text-navy transition hover:bg-navy hover:text-white sm:text-sm"
               >
-                {area}
-              </span>
+                {topic.label}
+              </Link>
             ))}
           </div>
 

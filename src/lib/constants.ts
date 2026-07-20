@@ -5,8 +5,8 @@ export const SITE = {
     "Psikolog Yusuf Koçak, Ankara'da bireysel psikoterapi hizmetleri. Depresyon, kaygı ve daha fazlası için yüz yüze veya online seanslar.",
   url: "https://yusufkocak.tr",
   email: "psyyusuf@gmail.com",
-  phone: "+90 555 151 35 33",
-  phoneRaw: "905551513533",
+  phone: "0543 165 35 33",
+  phoneRaw: "905431653533",
   location: "Barbaros Mahallesi\nÇankaya / Ankara",
   designer: "3 Kare Ajans",
 } as const;
@@ -27,6 +27,7 @@ export const EDUCATION = [
   "Nevrotiklerde Dinamik Psikoterapi Eğitimi (Doğan Şahin)",
   "Bireysel Süpervizyon (devam ediyor)",
   "Psikodinamik Destekleyici Psikoterapi Eğitimi (Cem Kaptanoğlu) (Eylül 2025 – Haziran 2028)",
+  "Bilişsel ve Davranışçı Terapi Eğitimi (Türk Psikologlar Derneği)",
 ];
 
 export const THERAPY_INTRO = [
@@ -63,32 +64,4 @@ export const PARTNERS = [
     href: "https://psikeistanbul.org/",
     logo: "/images/partners/psike.png",
   },
-] as const;
-
-export const WEEKDAY_HOURS = [17, 18, 19, 20, 21] as const;
-export const WEEKEND_HOURS = Array.from({ length: 13 }, (_, i) => i + 9); // 09-21
-
-export const DAY_NAMES = [
-  "Pazar",
-  "Pazartesi",
-  "Salı",
-  "Çarşamba",
-  "Perşembe",
-  "Cuma",
-  "Cumartesi",
-] as const;
-
-export const MONTH_NAMES = [
-  "Ocak",
-  "Şubat",
-  "Mart",
-  "Nisan",
-  "Mayıs",
-  "Haziran",
-  "Temmuz",
-  "Ağustos",
-  "Eylül",
-  "Ekim",
-  "Kasım",
-  "Aralık",
 ] as const;

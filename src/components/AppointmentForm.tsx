@@ -1,24 +1,14 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import {
-  buildWhatsAppUrl,
-  getAvailableDates,
-  getHoursForDate,
-  formatHour,
-} from "@/lib/appointment";
+import { useState } from "react";
+import { buildWhatsAppUrl, DEFAULT_MESSAGE } from "@/lib/appointment";
 import { trackEvent } from "@/lib/analytics";
 
 export default function AppointmentForm() {
-  const dates = useMemo(() => getAvailableDates(), []);
   const [name, setName] = useState("");
-  const [dateValue, setDateValue] = useState("");
-  const [hour, setHour] = useState<number | "">("");
+  const [message, setMessage] = useState(DEFAULT_MESSAGE);
   const [error, setError] = useState("");
   const [redirecting, setRedirecting] = useState(false);
-
-  const selectedDate = dates.find((d) => d.value === dateValue);
-  const hours = selectedDate ? getHoursForDate(selectedDate.isWeekend) : [];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,21 +18,16 @@ export default function AppointmentForm() {
       setError("Lütfen adınızı yazın.");
       return;
     }
-    if (!selectedDate) {
-      setError("Lütfen bir gün seçin.");
-      return;
-    }
-    if (hour === "") {
-      setError("Lütfen bir saat seçin.");
+    if (!message.trim()) {
+      setError("Lütfen bir mesaj yazın.");
       return;
     }
 
-    const url = buildWhatsAppUrl(name, selectedDate.label, hour);
+    const url = buildWhatsAppUrl(name, message);
     setRedirecting(true);
 
     trackEvent("appointment_request", {
-      appointment_date: selectedDate.label,
-      appointment_hour: formatHour(hour),
+      method: "whatsapp_message",
     });
     trackEvent("generate_lead", {
       method: "whatsapp_appointment",
@@ -63,12 +48,9 @@ export default function AppointmentForm() {
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-navy-light">
           Ücretsiz ön görüşme
         </p>
-        <h2 className="mt-2 font-display text-2xl font-light text-navy sm:text-3xl">
-          15 dakikalık tanışma görüşmesi
-        </h2>
-        <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-          Süreci birlikte değerlendirmek için kısa bir görüşme planlayabilirsiniz.
-          Tercih ettiğiniz gün ve saati seçin.
+        <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
+          Süreci birlikte ele almak ve 15 dakikalık değerlendirme görüşmesi
+          planlaması yapabilmek için lütfen bilgilerinizi ve mesajınızı iletiniz.
         </p>
       </div>
 
@@ -88,55 +70,16 @@ export default function AppointmentForm() {
         </div>
 
         <div>
-          <label htmlFor="date" className="mb-1.5 block text-sm font-medium text-navy">
-            Gün
+          <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-navy">
+            Mesajınız
           </label>
-          <select
-            id="date"
-            value={dateValue}
-            onChange={(e) => {
-              setDateValue(e.target.value);
-              setHour("");
-            }}
-            className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-navy outline-none transition focus:border-navy focus:ring-2 focus:ring-navy/10"
-          >
-            <option value="">Tarih seçin</option>
-            {dates.map((date) => (
-              <option key={date.value} value={date.value}>
-                {date.label}
-                {date.isWeekend ? " (Hafta sonu)" : ""}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="hour" className="mb-1.5 block text-sm font-medium text-navy">
-            Saat
-          </label>
-          <select
-            id="hour"
-            value={hour === "" ? "" : String(hour)}
-            onChange={(e) => setHour(e.target.value ? Number(e.target.value) : "")}
-            disabled={!selectedDate}
-            className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-navy outline-none transition focus:border-navy focus:ring-2 focus:ring-navy/10 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-400"
-          >
-            <option value="">
-              {selectedDate ? "Saat seçin" : "Önce gün seçin"}
-            </option>
-            {hours.map((h) => (
-              <option key={h} value={h}>
-                {formatHour(h)}
-              </option>
-            ))}
-          </select>
-          {selectedDate && (
-            <p className="mt-1.5 text-xs text-muted">
-              {selectedDate.isWeekend
-                ? "Hafta sonu: 09:00 – 21:00 arası"
-                : "Hafta içi: 17:00 – 21:00 arası"}
-            </p>
-          )}
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            rows={4}
+            className="w-full resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-navy outline-none transition focus:border-navy focus:ring-2 focus:ring-navy/10"
+          />
         </div>
 
         {error && (

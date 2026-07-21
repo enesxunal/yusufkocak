@@ -1,4 +1,15 @@
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+export const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+
+const ADS_LABELS = {
+  whatsapp: process.env.NEXT_PUBLIC_ADS_LABEL_WHATSAPP,
+  phone: process.env.NEXT_PUBLIC_ADS_LABEL_PHONE,
+  appointment: process.env.NEXT_PUBLIC_ADS_LABEL_APPOINTMENT,
+} as const;
+
+export type ConversionType = keyof typeof ADS_LABELS;
+
+export const hasAnyAnalytics = Boolean(GA_MEASUREMENT_ID || GOOGLE_ADS_ID);
 
 declare global {
   interface Window {
@@ -11,9 +22,22 @@ export function trackEvent(
   name: string,
   params?: Record<string, string | number | boolean | undefined>,
 ) {
-  if (typeof window === "undefined" || !window.gtag || !GA_MEASUREMENT_ID) return;
+  if (typeof window === "undefined" || !window.gtag) return;
 
   window.gtag("event", name, params);
+}
+
+/** Google Ads dönüşümünü tetikler. Yalnızca ilgili etiket tanımlıysa çalışır. */
+export function trackConversion(type: ConversionType) {
+  if (typeof window === "undefined" || !window.gtag) return;
+  if (!GOOGLE_ADS_ID) return;
+
+  const label = ADS_LABELS[type];
+  if (!label) return;
+
+  window.gtag("event", "conversion", {
+    send_to: `${GOOGLE_ADS_ID}/${label}`,
+  });
 }
 
 export function trackClick(element: HTMLElement) {
@@ -36,6 +60,9 @@ export function trackClick(element: HTMLElement) {
       link_text: text || contactMethod,
       link_url: href,
     });
+
+    if (contactMethod === "whatsapp") trackConversion("whatsapp");
+    else if (contactMethod === "phone") trackConversion("phone");
     return;
   }
 

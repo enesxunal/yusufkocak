@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { buildWhatsAppUrl, DEFAULT_MESSAGE } from "@/lib/appointment";
-import { trackEvent } from "@/lib/analytics";
+import { trackConversion, trackEvent } from "@/lib/analytics";
 
 export default function AppointmentForm() {
   const [name, setName] = useState("");
@@ -32,6 +32,7 @@ export default function AppointmentForm() {
     trackEvent("generate_lead", {
       method: "whatsapp_appointment",
     });
+    trackConversion("appointment");
 
     window.setTimeout(() => {
       window.open(url, "_blank", "noopener,noreferrer");

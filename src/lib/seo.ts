@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { SITE } from "./constants";
 
 const keywords = [
+  "ankara psikolog",
+  "uzman psikolog",
+  "online psikolog",
   "psikolog ankara",
   "klinik psikolog ankara",
   "bireysel psikoterapi ankara",

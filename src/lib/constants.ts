@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Psikolog Yusuf Koçak",
-  title: "Psikolog Yusuf Koçak | Bireysel Psikoterapi Ankara",
+  title: "Uzman Psikolog Yusuf Koçak | Ankara & Online Psikoterapi",
   description:
-    "Psikolog Yusuf Koçak, Ankara'da bireysel psikoterapi hizmetleri. Depresyon, kaygı ve daha fazlası için yüz yüze veya online seanslar.",
+    "Ankara'da uzman psikolog Yusuf Koçak ile bireysel psikoterapi. Depresyon, kaygı ve daha fazlası için yüz yüze veya online görüşme; ücretsiz ön görüşme.",
   url: "https://yusufkocak.tr",
   email: "psyyusuf@gmail.com",
   phone: "0543 165 35 33",

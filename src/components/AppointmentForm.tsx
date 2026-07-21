@@ -45,8 +45,9 @@ export default function AppointmentForm() {
       className="rounded-2xl border border-white/10 bg-white/95 p-6 shadow-2xl backdrop-blur-sm sm:p-8"
     >
       <div className="mb-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-navy-light">
-          Ücretsiz ön görüşme
+        <p className="text-xs uppercase tracking-[0.2em] text-navy-light">
+          <span className="text-sm font-extrabold text-navy">Ücretsiz</span>{" "}
+          <span className="font-semibold">ön görüşme</span>
         </p>
         <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
           Süreci birlikte ele almak ve 15 dakikalık değerlendirme görüşmesi

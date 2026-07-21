@@ -1,7 +1,7 @@
 import { SITE } from "./constants";
 
 const DEFAULT_MESSAGE =
-  "Merhaba, ücretsiz ön görüşme için randevu planlamak istiyorum.";
+  "Ücretsiz ön görüşme için randevu planlamak istiyorum.";
 
 export function buildWhatsAppUrl(name: string, message: string): string {
   const trimmedMessage = message.trim() || DEFAULT_MESSAGE;

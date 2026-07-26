@@ -7,7 +7,10 @@ export type Topic = {
   slug: string;
   label: string;
   title: string;
+  /** SEO sayfa başlığı (title etiketi) */
+  seoTitle: string;
   description: string;
+  keywords: string[];
   image: string;
   imageAlt: string;
   /** İçerik eklendiğinde buraya blokları yazın. null ise "yakında" gösterilir. */
@@ -19,8 +22,15 @@ export const TOPICS: Topic[] = [
     slug: "kaygi-bozukluklari",
     label: "Kaygı (Anksiyete) Bozuklukları",
     title: "Yaygın Kaygı (Anksiyete) Bozukluğu",
+    seoTitle: "Kaygı Bozukluğu Tedavisi Ankara | Uzman Psikolog Yusuf Koçak",
     description:
-      "Yaygın kaygı bozukluğu belirtileri ve psikoterapi süreci hakkında bilgilendirici içerik.",
+      "Ankara'da yaygın kaygı (anksiyete) bozukluğu için bireysel psikoterapi. Belirtiler, süreç ve destek hakkında bilgilendirici içerik.",
+    keywords: [
+      "kaygı bozukluğu ankara",
+      "anksiyete tedavisi ankara",
+      "yaygın kaygı bozukluğu",
+      "ankara psikolog kaygı",
+    ],
     image: "/images/divan.png",
     imageAlt: "Psikoterapi seans odası",
     content: [
@@ -54,8 +64,15 @@ export const TOPICS: Topic[] = [
     slug: "depresyon",
     label: "Depresyon",
     title: "Depresyon",
+    seoTitle: "Depresyon Tedavisi Ankara | Uzman Psikolog Yusuf Koçak",
     description:
-      "Depresyon belirtileri ve psikoterapi süreci hakkında bilgilendirici içerik.",
+      "Ankara'da depresyon için bireysel psikoterapi. Belirtiler, süreç ve destek hakkında bilgilendirici içerik.",
+    keywords: [
+      "depresyon tedavisi ankara",
+      "depresyon psikolog ankara",
+      "depresyon terapisi",
+      "ankara psikolog depresyon",
+    ],
     image: "/images/merdiven.png",
     imageAlt: "Ofis binası giriş alanı",
     content: [
@@ -101,8 +118,15 @@ export const TOPICS: Topic[] = [
     slug: "fobiler",
     label: "Fobiler",
     title: "Fobiler",
+    seoTitle: "Fobi Tedavisi Ankara | Özgül, Sosyal Fobi ve Agorafobi",
     description:
-      "Fobiler, özgül fobi, sosyal fobi ve agorafobi hakkında bilgilendirici içerik.",
+      "Ankara'da fobi, özgül fobi, sosyal fobi ve agorafobi için psikoterapi. Belirtiler ve süreç hakkında bilgi.",
+    keywords: [
+      "fobi tedavisi ankara",
+      "sosyal fobi ankara",
+      "agorafobi",
+      "özgül fobi psikolog",
+    ],
     image: "/images/divan.png",
     imageAlt: "Psikoterapi seans odası",
     content: [
@@ -140,8 +164,15 @@ export const TOPICS: Topic[] = [
     slug: "panik-bozukluk",
     label: "Panik Bozukluk",
     title: "Panik Bozukluk",
+    seoTitle: "Panik Bozukluk Tedavisi Ankara | Uzman Psikolog Yusuf Koçak",
     description:
-      "Panik bozukluk ve panik nöbetleri hakkında bilgilendirici içerik.",
+      "Ankara'da panik bozukluk ve panik nöbetleri için bireysel psikoterapi. Belirtiler ve süreç hakkında bilgi.",
+    keywords: [
+      "panik bozukluk ankara",
+      "panik atak tedavisi",
+      "panik nöbeti psikolog",
+      "ankara panik bozukluk",
+    ],
     image: "/images/about-image.png",
     imageAlt: "Psikoterapi çalışma alanı",
     content: [
@@ -175,8 +206,15 @@ export const TOPICS: Topic[] = [
     slug: "obsesif-kompulsif-bozukluk",
     label: "Obsesif – Kompulsif Bozukluk",
     title: "Obsesif – Kompulsif Bozukluk",
+    seoTitle: "OKB Tedavisi Ankara | Obsesif Kompulsif Bozukluk",
     description:
-      "Obsesif kompulsif bozukluk (takıntılar) hakkında bilgilendirici içerik.",
+      "Ankara'da obsesif kompulsif bozukluk (OKB) için psikoterapi. Takıntılar, ritüeller ve süreç hakkında bilgi.",
+    keywords: [
+      "okb tedavisi ankara",
+      "obsesif kompulsif bozukluk",
+      "takıntı psikolog ankara",
+      "okb psikoterapi",
+    ],
     image: "/images/merdiven.png",
     imageAlt: "Ofis binası giriş alanı",
     content: [
@@ -208,8 +246,15 @@ export const TOPICS: Topic[] = [
     slug: "travma",
     label: "Travma Sonrası Stres Bozukluğu",
     title: "Travma Sonrası Stres Bozukluğu",
+    seoTitle: "TSSB Tedavisi Ankara | Travma Sonrası Stres Bozukluğu",
     description:
-      "Travma sonrası stres bozukluğu hakkında bilgilendirici içerik.",
+      "Ankara'da travma sonrası stres bozukluğu (TSSB) için psikoterapi. Belirtiler ve süreç hakkında bilgi.",
+    keywords: [
+      "travma sonrası stres bozukluğu",
+      "tssb tedavisi ankara",
+      "travma psikolog ankara",
+      "travma terapisi",
+    ],
     image: "/images/hero-banner.png",
     imageAlt: "Psikoterapi atmosferi",
     content: [
@@ -247,8 +292,15 @@ export const TOPICS: Topic[] = [
     slug: "yeme-bozukluklari",
     label: "Beslenme ve Yeme Bozuklukları",
     title: "Beslenme ve Yeme Bozuklukları",
+    seoTitle: "Yeme Bozuklukları Tedavisi Ankara | Anoreksiya ve Bulimiya",
     description:
-      "Anoreksiya nervoza ve bulimiya nervoza hakkında bilgilendirici içerik.",
+      "Ankara'da anoreksiya nervoza ve bulimiya nervoza için psikoterapi. Yeme bozuklukları hakkında bilgilendirici içerik.",
+    keywords: [
+      "yeme bozukluğu ankara",
+      "anoreksiya tedavisi",
+      "bulimiya tedavisi",
+      "yeme bozukluğu psikolog",
+    ],
     image: "/images/divan.png",
     imageAlt: "Psikoterapi seans odası",
     content: [
@@ -301,8 +353,15 @@ export const TOPICS: Topic[] = [
     slug: "kisilik-bozukluklari",
     label: "Kişilik Bozuklukları",
     title: "Kişilik Bozuklukları",
+    seoTitle: "Kişilik Bozuklukları Tedavisi Ankara | Uzman Psikolog",
     description:
-      "Kişilik bozuklukları ve DSM-5 kümeleri hakkında bilgilendirici içerik.",
+      "Ankara'da kişilik bozuklukları için bireysel psikoterapi. DSM-5 kümeleri ve süreç hakkında bilgilendirici içerik.",
+    keywords: [
+      "kişilik bozukluğu ankara",
+      "borderline psikolog ankara",
+      "narsisistik kişilik",
+      "kişilik bozukluğu terapisi",
+    ],
     image: "/images/merdiven.png",
     imageAlt: "Ofis binası giriş alanı",
     content: [

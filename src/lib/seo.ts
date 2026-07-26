@@ -123,6 +123,12 @@ export function getStructuredData() {
           "Bireysel psikoterapi",
           "Depresyon",
           "Kaygı bozuklukları",
+          "Panik bozukluk",
+          "Obsesif kompulsif bozukluk",
+          "Travma sonrası stres bozukluğu",
+          "Fobiler",
+          "Kişilik bozuklukları",
+          "Yeme bozuklukları",
         ],
       },
       {

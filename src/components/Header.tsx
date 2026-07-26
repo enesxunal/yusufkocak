@@ -3,11 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { LEGAL_PAGES } from "@/lib/legal-content";
 
 const navItems = [
   { href: "/#about", label: "Hakkımda" },
   { href: "/#therapy", label: "Psikoterapi" },
+  { href: "/#faq", label: "SSS" },
   { href: "/#appointment", label: "Ön Görüşme" },
   { href: "/#contact", label: "İletişim" },
 ];

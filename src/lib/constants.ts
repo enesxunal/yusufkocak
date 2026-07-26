@@ -35,8 +35,10 @@ export const THERAPY_INTRO = [
   "Psikoterapi sürecinde kişi yargılanmadan ve şefkatle dinlenerek; tüm karmaşıklığı ve bütünselliği içinde anlaşılmaya çalışılır. Çünkü, kendilik ancak bir ilişki içinde, empatik bir anlayışla, başkası tarafından hissedildiğinde iyileşebilir.",
 ];
 
-export const THERAPY_AREAS =
-  "Depresyon, stres yönetimi, öfke kontrolü, panik bozukluk, fobiler, obsesif kompulsif bozukluk (takıntılar), yaygın kaygı bozukluğu, travma sonrası stres bozukluğu, kişilik bozuklukları ve diğer psikopatolojiler gibi ruh sağlığınızı, işlevselliğinizi ve kişilerarası ilişkilerinizi etkileyen konular üzerine çalışıyorum.";
+export const THERAPY_AREAS = [
+  "Depresyon, kaygı (anksiyete) bozuklukları, fobiler (özgül fobi, sosyal fobi, agorafobi vs.), obsesif kompulsif bozukluk, travma sonrası stres bozukluğu, yeme bozuklukları, panik bozukluk ve kişilik bozuklukları ve diğer psikopatolojiler gibi alanlarda çalışıyorum.",
+  "Aynı zamanda çalışmakta olduğum öfke kontrolü, yakın ilişki zorlukları, stres yönetimi vb. gibi; işlevselliğinizi, ruh sağlığınızı ve kişilerarası ilişkilerinizi etkileyen konularda da destek almak için iletişime geçebilirsiniz.",
+];
 
 export const PARTNERS = [
   {

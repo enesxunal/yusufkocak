@@ -43,9 +43,16 @@ export default function Therapy() {
           <h3 className="font-display text-xl font-medium text-navy">
             Çalışma alanları
           </h3>
-          <p className="mt-4 text-sm leading-relaxed text-gray-700 sm:text-base">
-            {THERAPY_AREAS}
-          </p>
+          <div className="mt-4 space-y-4">
+            {THERAPY_AREAS.map((paragraph) => (
+              <p
+                key={paragraph.slice(0, 40)}
+                className="text-sm leading-relaxed text-gray-700 sm:text-base"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-2">
             {TOPICS.map((topic) => (

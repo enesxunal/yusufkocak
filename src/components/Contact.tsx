@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { SITE } from "@/lib/constants";
 import PartnerLogos from "./PartnerLogos";
 import LegalLinks from "./LegalLinks";
@@ -13,7 +12,7 @@ export default function Contact() {
       className="relative overflow-hidden bg-navy py-20 text-white lg:py-24"
     >
       <div
-        className="pointer-events-none absolute inset-0 opacity-10"
+        className="pointer-events-none absolute inset-0 opacity-25"
         style={{
           backgroundImage: "url(/images/section-bg.png)",
           backgroundRepeat: "no-repeat",

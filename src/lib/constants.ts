@@ -42,13 +42,13 @@ export const THERAPY_AREAS = [
 
 export const PARTNERS = [
   {
-    name: "Türk Psikologlar Derneği",
-    href: "https://psikolog.org.tr/",
+    name: "Türk Psikiyatri Derneği",
+    href: "https://psikiyatri.org.tr/",
     logo: "/images/partners/tpd.png",
   },
   {
-    name: "Türk Psikiyatri Derneği",
-    href: "https://psikiyatri.org.tr/",
+    name: "Türk Psikologlar Derneği",
+    href: "https://psikolog.org.tr/",
     logo: "/images/partners/tps.png",
   },
   {

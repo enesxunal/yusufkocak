@@ -9,7 +9,7 @@ const navItems = [
   { href: "/#about", label: "Hakkımda" },
   { href: "/#therapy", label: "Psikoterapi" },
   { href: "/#faq", label: "SSS" },
-  { href: "/#appointment", label: "Tanışma" },
+  { href: "/#appointment", label: "Mesajınızı Bırakınız" },
   { href: "/#contact", label: "İletişim" },
 ];
 

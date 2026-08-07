@@ -6,7 +6,7 @@ export default function WhatsAppButton() {
       <a
         href="#appointment"
         className="flex items-center gap-2 rounded-full bg-navy px-4 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-navy-light sm:px-5"
-        aria-label="Tanışma görüşmesi planla"
+        aria-label="Mesajınızı Bırakınız"
       >
         <svg
           viewBox="0 0 24 24"
@@ -19,7 +19,7 @@ export default function WhatsAppButton() {
           <rect x="3" y="4" width="18" height="18" rx="2" />
           <path d="M16 2v4M8 2v4M3 10h18" />
         </svg>
-        <span className="hidden sm:inline">Tanışma</span>
+        <span className="hidden sm:inline">Mesajınızı Bırakınız</span>
       </a>
 
       <a

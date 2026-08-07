@@ -69,7 +69,7 @@ export default function Contact() {
                   Telefon et
                 </ContactButton>
                 <ContactButton href="#appointment" variant="solid">
-                  Tanışma görüşmesi
+                  Mesajınızı Bırakınız
                 </ContactButton>
               </div>
             </div>

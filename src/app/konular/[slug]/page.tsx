@@ -247,7 +247,7 @@ export default async function TopicPage({ params }: PageProps) {
               href="/#appointment"
               className="inline-flex items-center rounded-xl bg-navy px-6 py-3 text-sm font-semibold text-white transition hover:bg-navy-light"
             >
-              Tanışma görüşmesi planla
+              Mesajınızı Bırakınız
             </Link>
           </div>
 

@@ -27,7 +27,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Seanslar ne kadar sürer ve süreç ne kadar devam eder?",
     answer:
-      "Bireysel seanslar genellikle 45–50 dakika sürer. Toplam süre kişinin ihtiyaçlarına, hedeflerine ve sürecin gidişatına göre değişir. Kısa süreli destek de mümkün olabilir; daha uzun soluklu bir çalışma da gerekebilir. Bu, süreç içinde birlikte değerlendirilir.",
+      "Bireysel seanslar genellikle 45 dakika sürer. Toplam süre kişinin ihtiyaçlarına, hedeflerine ve sürecin gidişatına göre değişir. Kısa süreli destek de mümkün olabilir; daha uzun soluklu bir çalışma da gerekebilir. Bu, süreç içinde birlikte değerlendirilir.",
   },
   {
     question: "Online terapi mümkün mü?",

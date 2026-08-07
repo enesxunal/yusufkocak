@@ -173,8 +173,8 @@ export const TOPICS: Topic[] = [
       "panik nöbeti psikolog",
       "ankara panik bozukluk",
     ],
-    image: "/images/about-image.png",
-    imageAlt: "Psikoterapi çalışma alanı",
+    image: "/images/divan.png",
+    imageAlt: "Psikoterapi seans odası",
     content: [
       {
         type: "paragraph",

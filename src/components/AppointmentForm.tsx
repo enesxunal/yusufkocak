@@ -92,7 +92,7 @@ export default function AppointmentForm() {
           disabled={redirecting}
           className="flex w-full items-center justify-center rounded-xl bg-navy px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-navy-light focus:outline-none focus:ring-2 focus:ring-navy/20 disabled:cursor-wait disabled:opacity-80"
         >
-          {redirecting ? "WhatsApp'a yönlendiriliyorsunuz…" : "Randevu oluştur"}
+          {redirecting ? "WhatsApp'a yönlendiriliyorsunuz…" : "Mesajımı gönder"}
         </button>
 
         {redirecting && (

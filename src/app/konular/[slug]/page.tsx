@@ -231,7 +231,7 @@ export default async function TopicPage({ params }: PageProps) {
             <TopicContent blocks={topic.content} />
           ) : (
             <p className="mt-8 rounded-2xl bg-white p-6 text-sm leading-relaxed text-gray-600 shadow-sm sm:p-8 sm:text-base">
-              Bu konu hakkındaki yazı yakında eklenecektir. Ön görüşme için{" "}
+              Bu konu hakkındaki yazı yakında eklenecektir. Tanışma görüşmesi için{" "}
               <Link
                 href="/#appointment"
                 className="text-navy underline-offset-2 hover:underline"
@@ -247,7 +247,7 @@ export default async function TopicPage({ params }: PageProps) {
               href="/#appointment"
               className="inline-flex items-center rounded-xl bg-navy px-6 py-3 text-sm font-semibold text-white transition hover:bg-navy-light"
             >
-              Ücretsiz ön görüşme planla
+              Tanışma görüşmesi planla
             </Link>
           </div>
 

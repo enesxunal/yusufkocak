@@ -36,7 +36,7 @@ export const PRIVACY_SECTIONS = [
     title: "2. Kişisel Verilerin İşlenme Amaçları",
     paragraphs: [
       "Web sitemiz aracılığıyla aşağıdaki amaçlarla sınırlı kişisel veri işlenmektedir:",
-      "• Ön görüşme talebinizin WhatsApp üzerinden iletilmesi,",
+      "• Tanışma görüşmesi talebinizin WhatsApp üzerinden iletilmesi,",
       "• İletişim kanallarımız aracılığıyla tarafımızla iletişime geçmeniz,",
       "• Web sitesi güvenliğinin sağlanması ve kötüye kullanımın önlenmesi,",
       "• Yasal yükümlülüklerin yerine getirilmesi,",

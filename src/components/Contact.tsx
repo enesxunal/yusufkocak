@@ -29,8 +29,8 @@ export default function Contact() {
               Birlikte konuşalım
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/70">
-              Psikoterapi süreci hakkında sorularınız varsa veya ön görüşme
-              planlamak isterseniz aşağıdaki kanallardan ulaşabilirsiniz.
+              Psikoterapi süreci hakkında sorularınız varsa veya tanışma
+              görüşmesi planlamak isterseniz aşağıdaki kanallardan ulaşabilirsiniz.
             </p>
 
             <div className="mt-10 space-y-5">
@@ -69,7 +69,7 @@ export default function Contact() {
                   Telefon et
                 </ContactButton>
                 <ContactButton href="#appointment" variant="solid">
-                  Ön görüşme planla
+                  Tanışma görüşmesi
                 </ContactButton>
               </div>
             </div>

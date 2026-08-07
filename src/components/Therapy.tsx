@@ -70,7 +70,7 @@ export default function Therapy() {
             href="#appointment"
             className="mt-8 inline-flex items-center rounded-xl bg-navy px-6 py-3 text-sm font-semibold text-white transition hover:bg-navy-light"
           >
-            Ön görüşme planla
+            Tanışma görüşmesi
           </a>
         </div>
       </div>

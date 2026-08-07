@@ -37,7 +37,7 @@ export default function Hero() {
               href="#appointment"
               className="inline-flex items-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-navy transition hover:bg-white/90"
             >
-              Ön görüşme planla
+              Tanışma görüşmesi
             </a>
           </div>
         </div>

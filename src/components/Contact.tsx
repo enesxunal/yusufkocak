@@ -1,6 +1,7 @@
 import { SITE } from "@/lib/constants";
 import PartnerLogos from "./PartnerLogos";
 import LegalLinks from "./LegalLinks";
+import DoctorTakvimiWidget from "./DoctorTakvimiWidget";
 
 const sectionLabel =
   "text-xs font-semibold uppercase tracking-[0.2em] text-white/50";
@@ -55,6 +56,7 @@ export default function Contact() {
           </div>
 
           <div className="flex flex-col gap-8 border-white/10 lg:border-l lg:pl-12">
+            <DoctorTakvimiWidget />
             <div>
               <p className={sectionLabel}>Hızlı iletişim</p>
               <div className="mt-4 flex flex-col gap-3">

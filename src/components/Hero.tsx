@@ -34,10 +34,10 @@ export default function Hero() {
               Hakkımda
             </a>
             <a
-              href="#appointment"
+              href="#randevu"
               className="inline-flex items-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-navy transition hover:bg-white/90"
             >
-              Mesajınızı Bırakınız
+              Online Randevu Al
             </a>
           </div>
         </div>

@@ -17,7 +17,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Nasıl randevu alabilirim?",
     answer:
-      "Sitedeki formu doldurarak, WhatsApp üzerinden ya da telefonla iletişime geçebilirsiniz. İlk adım olarak kısa bir tanışma / değerlendirme görüşmesi planlanabilir; uygun gün ve saat birlikte belirlenir.",
+      "Ana sayfadaki Online Randevu bölümünden DoktorTakvimi takvimini açıp uygun gün ve saati seçebilirsiniz. Ayrıca sitedeki mesaj formu, WhatsApp veya telefon üzerinden de iletişime geçebilirsiniz.",
   },
   {
     question: "Terapi süreci nasıl işler?",

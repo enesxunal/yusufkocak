@@ -9,7 +9,6 @@ const navItems = [
   { href: "/#about", label: "Hakkımda" },
   { href: "/#therapy", label: "Psikoterapi" },
   { href: "/#faq", label: "SSS" },
-  { href: "/#appointment", label: "Mesajınızı Bırakınız" },
   { href: "/#contact", label: "İletişim" },
 ];
 
@@ -122,6 +121,12 @@ export default function Header({ solid = false }: HeaderProps) {
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/#randevu"
+            className="rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-navy shadow-sm transition hover:bg-cream"
+          >
+            Randevu Al
+          </Link>
         </nav>
 
         <button
@@ -189,6 +194,15 @@ export default function Header({ solid = false }: HeaderProps) {
                 </Link>
               </li>
             ))}
+            <li className="pt-2">
+              <Link
+                href="/#randevu"
+                className="block rounded-xl bg-white px-5 py-3.5 text-center text-base font-semibold text-navy"
+                onClick={closeMenus}
+              >
+                Randevu Al
+              </Link>
+            </li>
           </ul>
         </nav>
       )}
